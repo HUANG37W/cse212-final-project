@@ -26,9 +26,12 @@
 ## IV. [Tree](./3-tree.md)
 
 - Introduction
-- Search within a Tree
-- Tree Insertion
-- Display a Tree
-- Tree Operation & Efficiency
+- Use of Binary Trees
+- Basic Operations
+- Create Root
+- Insert into a Tree
+- Traversing a tree
+- Tree Traversal Algorithms
+- BST in Python
 - Example
-- Problem to Solve
+- Problem to solve
