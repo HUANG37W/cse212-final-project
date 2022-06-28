@@ -11,7 +11,7 @@ of its parent (root) node's key.
 Thus, BST divides all its sub-trees into two segments; the left sub-tree and the
 right sub-tree and can be defined as
 
-```python
+``` python
 left_subtree (keys) < node (key) ≤ right_subtree (keys)
 ```
 
