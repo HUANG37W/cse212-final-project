@@ -2,14 +2,11 @@
 ## Jason Huang - CSE 212
 ---
 ## Introduction
-A Binary Search Tree (BST) is a tree in which all the nodes follow the belowmentioned properties
-- The value of the key of the left sub-tree is less than the value of its parent
-(root) node's key.
-- The value of the key of the right sub-tree is greater than or equal to the value
-of its parent (root) node's key.
-![Illustration of a Binary Search Tree](tree.png)
-Thus, BST divides all its sub-trees into two segments; the left sub-tree and the
-right sub-tree and can be defined as
+A Binary Search Tree (BST) is a tree in which all the nodes follow the below mentioned properties
+- The value of the key of the left sub-tree is less than the value of its parent(root) node's key.
+- The value of the key of the right sub-tree is greater than or equal to the value of its parent (root) node's key.
+![Illustration of a Binary Search Tree](../tree.png)
+Thus, BST divides all its sub-trees into two segments; the left sub-tree and the right sub-tree and can be defined as
 
 ``` python
 left_subtree (keys) < node (key) ≤ right_subtree (keys)
@@ -19,9 +16,9 @@ left_subtree (keys) < node (key) ≤ right_subtree (keys)
 
 ## Use of Binary Trees
 
-In computing, binary trees are mainly used for searching and sorting as they
-provide a means to store data hierarchically. Some common operations that can be
-conducted on binary trees include insertion, deletion, and traversal.
+In computing, binary trees are mainly used for searching and sorting as they provide a means to store data hierarchically. 
+
+Some common operations that can be conducted on binary trees include insertion, deletion, and traversal.
 
 ---
 
@@ -34,16 +31,15 @@ Following are the basic operations of a binary tree:
 - **Post-order Traversal** − Traverses a tree in a post-order manner.
 
 ### Create Root
-We just create a Node class and add assign a value to the node. This becomes tree
-with only a root node.
-```python
+We just create a Node class and add assign a value to the node. This becomes tree with only a root node.
+``` python
 class Node:
- def __init__(self, data):
- self.left = None
- self.right = None
- self.data = data
- def PrintTree(self):
- print(self.data)
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+    def PrintTree(self):
+        print(self.data)
 root = Node(10)
 root.PrintTree()
 ```
@@ -53,40 +49,37 @@ When the above code is executed, it produces the following result −
 ```
 
 ## Insert into a Tree
-To insert into a tree we use the same node class created above and add a insert
-class to it. The insert class compares the value of the node to the parent node and
-decides to add it as a left node or a right node. Finally the PrintTree class is
-used to print the tree.
-```python
+To insert into a tree we use the same node class created above and add a insert class to it. The insert class compares the value of the node to the parent node and decides to add it as a left node or a right node. Finally the PrintTree class is used to print the tree.
+``` python
 class Node:
- def __init__(self, data):
- self.left = None
- self.right = None
- self.data = data
- def insert(self, data):
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
+    def insert(self, data):
 
 # Compare the new value with the parent node
- if self.data:
- if data < self.data:
- if self.left is None:
- self.left = Node(data)
- else:
- self.left.insert(data)
- elif data > self.data:
- if self.right is None:
- self.right = Node(data)
- else:
- self.right.insert(data)
- else:
- self.data = data
+        if self.data:
+           if data < self.data:
+              if self.left is None:
+                 self.left = Node(data)
+              else:
+                 self.left.insert(data)
+              elif data > self.data:
+                 if self.right is None:
+                    self.right = Node(data)
+                 else:
+                    self.right.insert(data)
+        else:
+           self.data = data
 
 # Print the tree
- def PrintTree(self):
- if self.left:
- self.left.PrintTree()
- print( self.data),
- if self.right:
- self.right.PrintTree()
+    def PrintTree(self):
+        if self.left:
+           self.left.PrintTree()
+        print( self.data),
+        if self.right:
+           self.right.PrintTree()
 
 # Use the insert method to add nodes
 root = Node(12)
@@ -101,22 +94,16 @@ When the above code is executed, it produces the following result
 ```
 
 ## Traversing a tree
-The tree can be traversed by deciding on a sequence to visit each node. As we can
-clearly see we can start at a node then visit the left sub-tree first and right
-sub-tree next. Or we can also visit the right sub-tree first and left sub-tree
-next. Accordingly there are different names for these tree traversal methods.
+The tree can be traversed by deciding on a sequence to visit each node. As we can clearly see we can start at a node then visit the left sub-tree first and right sub-tree next. Or we can also visit the right sub-tree first and left sub-tree next. Accordingly there are different names for these tree traversal methods.
 
 ### Tree Traversal Algorithms
-Traversal is a process to visit all the nodes of a tree and may print their values
-too. Because, all nodes are connected via edges (links) we always start from the
-root (head) node. That is, we cannot randomly access a node in a tree. There are
-three ways which we use to traverse a tree.
+Traversal is a process to visit all the nodes of a tree and may print their values too. Because, all nodes are connected via edges (links) we always start from the root (head) node. That is, we cannot randomly access a node in a tree. There are three ways which we use to traverse a tree.
 - In-order Traversal
 - Pre-order Traversal
 - Post-order Traversal
 The code for traversing a BST is shown below
 
-```python
+``` python
 def __iter__(self):
     """
  Perform a forward traversal (in order traversal) starting from
@@ -198,52 +185,53 @@ the size.
 
 ---
 ## Example
-```python
+``` python
 class Node:
- def __init__(self, data):
-self.left = None
- self.right = None
- self.data = data
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
 # Insert method to create nodes
- def insert(self, data):
- if self.data:
- if data < self.data:
- if self.left is None:
- self.left = Node(data)
- else:
- self.left.insert(data)
- else data > self.data:
- if self.right is None:
- self.right = Node(data)
- else:
- self.right.insert(data)
- else:
- self.data = data
-# findval method to compare the value with nodes
- def findval(self, lkpval):
- if lkpval < self.data:
- if self.left is None:
- return str(lkpval)+" Not Found"
- return self.left.findval(lkpval)
- else if lkpval > self.data:
- if self.right is None:
- return str(lkpval)+" Not Found"
- return self.right.findval(lkpval)
- else:
- print(str(self.data) + ' is found')
+    def insert(self, data):
+        if self.data:
+            if data < self.data:
+                if self.left is None:
+                   self.left = Node(data)
+                else:
+                   self.left.insert(data)
+                else data > self.data:
+                   if self.right is None:
+                      self.right = Node(data)
+                   else:
+                      self.right.insert(data)
+            else:
+                self.data = data
+# final method to compare the value with nodes
+    def finial(self, larval):
+        if larval < self.data:
+            if self.left is None:
+                return str(larval)+" Not Found"
+            return self.left.finial(larval)
+        else if larval > self.data:
+             if self.right is None:
+                return str(larval)+" Not Found"
+             return self.right.finial(larval)
+        else:
+            print(str(self.data) + ' is found')
+
 # Print the tree
- def PrintTree(self):
- if self.left:
- self.left.PrintTree()
- print( self.data),
- if self.right:
- self.right.PrintTree()
+    def PrintTree(self):
+        if self.left:
+           self.left.PrintTree()
+        print( self.data),
+        if self.right:
+           self.right.PrintTree()
 root = Node(12)
 root.insert(6)
 root.insert(14)
 root.insert(3)
-print(root.findval(7))
-print(root.findval(14))
+print(root.finial(7))
+print(root.finial(14))
 ```
 ```
 7 Not Found
@@ -251,28 +239,36 @@ print(root.findval(14))
 ```
 ---
 ## Problem to solve
-```python
+``` python
 # For this problem, you will need to create functions in order to create a tree
+
 from a sorted list.
 class TreeNode(object):
-def __init__(self, x):
- self.val = x
- self.left = None
- self.right = None
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 def array_to_bst(array_nums):
  #This function will attempt to insert the item in the middle of the
 "array_nums" into the Binary Tree. It should be done with recursive calls.
+
 def preOrder(node):
- if not node:
- return
- print(node.val)
- preOrder(node.left)
- preOrder(node.right)
+    if not node:
+        return
+    print(node.val)
+    preOrder(node.left)
+    preOrder(node.right)
+
 array_nums = [1,2,3,4,5,6,7]
+
 print("Original array:")
 print(array_nums)
 result = array_to_bst(array_nums)
 print("\nArray to a height balanced BST:")
 print(preOrder(result))
+
+
+
 ```
-You can find the solution [here](Solution.py)
+You can find the solution [here](../Solution.py)
