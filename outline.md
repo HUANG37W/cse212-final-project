@@ -8,8 +8,9 @@
 ## II. [Stack](./1-stack.md)
 
 - Introduction
-- Common Usage of Queue
-- Common Queue Operation & Efficiency
+- Use of Stacks
+- Implementing Stacks
+- Stack in Python
 - Example
 - Problem to Solve
 
