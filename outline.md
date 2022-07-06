@@ -5,7 +5,7 @@
 - Introduction
 - Contact Information
 
-## II. [Queue](./1-queue.md)
+## II. [Stack](./1-stack.md)
 
 - Introduction
 - Common Usage of Queue
