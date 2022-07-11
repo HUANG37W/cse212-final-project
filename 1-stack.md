@@ -1,4 +1,3 @@
-New changes
 # Stack
 ## Jason Huang - CSE 212
 ---

@@ -16,13 +16,13 @@
 
 ## III. [Linked List](./2-linked-list.md)
 
-- Structure
-- Linked List Manipulation
-- Search within a Linked List
-- Linked List Pros and Cons over Dynamic Array
-- Linked List Operation & Efficiency
-- Example
-- Problem to Solve
+- Introduction
+- Linked List Representation
+- aSearch within a Linked List
+- bLinked List Pros and Cons over Dynamic Array
+- cLinked List Operation & Efficiency
+- dExample
+- eProblem to Solve
 
 ## IV. [Tree](./3-tree.md)
 
