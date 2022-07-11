@@ -32,7 +32,15 @@
 ---
 
 ## Example
-Description:
+Description: 
+Even if we didn't know what a stack was before today, we have actually been using stacks in all software we have written. When we call a function in our code, we are telling the computer two things:
+
+1. Which function we want to call
+
+2. Which function to go back to when we are done
+
+Requirement:
+The first of these is clear in our code. If we are currently in function A, then we expect to call function B. However, how do we tell the computer that we want to return to function A when function B is finished. This can be even more complicated by the fact that function B will need to call functions C before it can finish. The computer accomplishes this by using a function stack. When a function is called, it is pushed to the stack. The current function running is always on the back of the stack. When the function finishes, it is popped off the stack. The result is that the function to return to is the one that is on the back of the stack.
 
 ```python
 myList = []
@@ -57,7 +65,10 @@ myList.pop()
 
 ## Problem to Solve
 Description:
+In addition to keeping track of the function name that is running, the stack also allows us to see where in the function we were when a function was originally called as well as the memory that we were using in our function. Stacks work well for remembering where we've been and the circumstances we were in during that previous time.
 
+Requirement: 
+When using Python or other programming languages, we will often see error messages that look like the following. Notice that the information is showing which functions have called which functions up until the point of error. This display of information comes directly from the function stack.
 ```python
 
 class Stack():

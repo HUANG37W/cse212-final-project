@@ -21,6 +21,7 @@
 - aSearch within a Linked List
 - bLinked List Pros and Cons over Dynamic Array
 - cLinked List Operation & Efficiency
+- Linked List in Python
 - dExample
 - eProblem to Solve
 
