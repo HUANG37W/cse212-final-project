@@ -32,6 +32,7 @@
 ---
 
 ## Example
+Description:
 
 ```python
 myList = []
@@ -55,6 +56,7 @@ myList.pop()
 ---
 
 ## Problem to Solve
+Description:
 
 ```python
 
