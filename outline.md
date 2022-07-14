@@ -18,12 +18,11 @@
 
 - Introduction
 - Linked List Representation
-- aSearch within a Linked List
+- Search within a Linked List
 - bLinked List Pros and Cons over Dynamic Array
-- cLinked List Operation & Efficiency
-- Linked List in Python
-- dExample
-- eProblem to Solve
+- Linked List Operation & Efficiency
+- Example
+- Problem to Solve
 
 ## IV. [Tree](./3-tree.md)
 
