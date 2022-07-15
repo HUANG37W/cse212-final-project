@@ -29,9 +29,84 @@
 
 ---
 
-## Search within a Linked List
+## Search an Element in Linked List without Recursion
+This is a Python program to search for an element in a linked list without using recursion.
 
+#### Problem Description
+The application shows the linked list's index and asks the user for a key to search it.
 
+#### Problem Solution
+1. Create a class Node.
+2. Create a class LinkedList.
+3. To append data and display the linked list, respectively, define the methods append and display inside the class LinkedList.
+4. Define method find_index to search for the key.
+5. find_index uses a loop to iterate over the nodes of the linked list to search for the key.
+6. Create an instance of LinkedList, append data to it and display the list.
+7. Request a search key from the user, then have them look for it.
+
+#### Program Codes:
+
+```python
+class Node:
+    def __init__(self, data):
+       self.data = data
+       self.next = None
+ 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.last_node = None
+ 
+    def append(self, data):
+        if self.last_node is None:
+            self.head = Node(data)
+            self.last_node = self.head
+        else:
+            self.last_node.next = Node(data)
+            self.last_node = self.last_node.next
+ 
+    def display(self):
+        current = self.head
+        while current is not None:
+            print(current.data, end = ' ')
+            current = current.next
+ 
+    def find_index(self, key):
+        current = self.head
+ 
+        index = 0
+        while current:
+            if current.data == key:
+                return index
+            current = current.next
+            index = index + 1
+ 
+        return -1
+
+a_list = LinkedList()
+for data in [4, -3, 1, 0, 9, 11]:
+    a_list.append(data)
+print('The linked list: ', end = '')
+a_list.display()
+print()
+ 
+key = int(input('What data item would you like to search for? '))
+index = a_list.find_index(key)
+if index == -1:
+    print(str(key) + ' was not found.')
+else:
+    print(str(key) + ' is at index ' + str(index) + '.')    
+```
+
+#### Program Explanation
+1. A LinkedList object is constructed.
+2. The list is supplemented with a few entries.
+3. The shown linked list.
+4. A key to start the search is requested of the user.
+5. The find index function looks up the index. If the key cannot be located, it returns -1.
+6. If the index is located, it is shown.
+
+---
 
 ## Linked List Operation & Efficiency
 
@@ -54,60 +129,64 @@ In computer science, linked lists are significant data structures. A linked list
 ### Requirements:
 Let’s get started!
 
-First, we will define a class called ‘MusicNode’. In the argument of the ‘__init__’ method, we will initialize attributes ‘current_music’ and ‘next_music’ as ‘None’:
-
-Next we define the class attributes, ‘current_music’ and ‘next_music’:
-
-Now, let’s write a class that will allow us to build our linked music list. Let’s call this class ‘MusicList’:
-
-We will use the ‘MusicList’ class, which will contain a reference to the ‘MusicNode’ type, to initialize our music list object. Let’s write an instance of our music list class and print the result:
-
-Now let’s build a linked list of music for our playlist. Let’s select the top 3 music of all time by The Beatles according to Entertainment Weekly. To start let’s define the value of each node. (Note: The ‘…’ corresponds to omitted code):
-
-Now let’s define the ‘next music’ value of the head node (the first music):
-
-Then we define the ‘next song’ value of the second node:
-
-Next, let’s define a simple function that will allow us to traverse our linked music list. In a while loop we’ll print the value of the current music and redefine the current value as the next music until it reaches the tail of the linked list, which points to null:
-
-Next, let’s print our list of songs:
-
-
+First, we will define a class called ‘MusicNode’. In the argument of the ‘__init__’ method, we will initialize and define attributes ‘current_music’ and ‘next_music’ as ‘None’:
 
 ```python
 class MusicNode:
     def __init__(self, current_music=None, next_music = None):
-
-class MusicNode:
-    def __init__(self, current_music=None, next_music = None):
         self.current_music = current_music
         self.next_music = next_music
+```
 
+Now, let’s write a class that will allow us to build our linked music list. Let’s call this class ‘MusicList’:
+
+```python
 class MusicList:
     def __init__(self):  
         self.head = None
+```
 
+We will use the ‘MusicList’ class, which will contain a reference to the ‘MusicNode’ type, to initialize our music list object. Let’s write an instance of our music list class and print the result:
+
+```python
 if __name__=='__main__':
     #initialize linked list object
     linked_list = MusicList()
     print(linked_list)
+```
 
+Now let’s build a linked list of music for our playlist. Let’s select the top 3 music of all time by The Beatles according to Entertainment Weekly. To start let’s define the value of each node. (Note: The ‘…’ corresponds to omitted code):
+
+```python
 if __name__=='__main__':
     ... 
     #assign values to nodes 
     linked_list.head = MusicNode("A Hard Day's Night")
     second = MusicNode('A Day in the Life')
     third = MusicNode("Strawberry Fields Forever")
+```
 
+Now let’s define the ‘next music’ value of the head node (the first music):
+
+```python
 if __name__=='__main__':
     ...
     #link nodes
     linked_list.head.next_music = second
+```
 
+
+Then we define the ‘next song’ value of the second node:
+
+```python
 if __name__=='__main__':
     ...
     second.next_song = third
+```
 
+Next, let’s define a simple function that will allow us to traverse our linked music list. In a while loop we’ll print the value of the current music and redefine the current value as the next music until it reaches the tail of the linked list, which points to null:
+
+```python
 class MusicList:   
     ...
     def printMusic(self): 
@@ -115,21 +194,15 @@ class MusicList:
         while (value): 
             print(value.current_music) 
             value = value.next_music
+```
 
+Next, let’s print our list of songs:
+
+```python
 if __name__=='__main__':
     ...
     linked_list.printMusic()
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 ## Problem to Solve
+

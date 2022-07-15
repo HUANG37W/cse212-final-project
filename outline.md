@@ -18,8 +18,7 @@
 
 - Introduction
 - Linked List Representation
-- Search within a Linked List
-- bLinked List Pros and Cons over Dynamic Array
+- Search an Element in Linked List without Recursion
 - Linked List Operation & Efficiency
 - Example
 - Problem to Solve
