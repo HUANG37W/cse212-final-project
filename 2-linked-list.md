@@ -127,55 +127,55 @@ else:
 
 ## Example: Creating a Music Playlist
 
-In computer science, linked lists are significant data structures. A linked list is a set of nodes that are organized in a linear fashion and each node in the list has a data value and a reference to the node after it. In this tutorial, we'll go through how to create a single linked list that corresponds to a playlist of music.
+In computer science, linked lists are significant data structures. A linked list is a set of nodes that are organized in a linear fashion and each node in the list has a data value and a reference to the node after it. In this tutorial, we'll go through how to create a single linked list that corresponds to a playlist of songs.
 
 ### Requirements:
 Let’s get started!
 
-First, we will define a class called ‘MusicNode’. In the argument of the ‘__init__’ method, we will initialize and define attributes ‘current_music’ and ‘next_music’ as ‘None’:
+First, we will define a class called ‘SongNode’. In the argument of the ‘__init__’ method, we will initialize and define attributes ‘current_song’ and ‘next_song’ as ‘None’:
 
 ```python
-class MusicNode:
-    def __init__(self, current_music=None, next_music = None):
-        self.current_music = current_music
-        self.next_music = next_music
+class SongNode:
+    def __init__(self, current_song=None, next_song = None):
+        self.current_song = current_song
+        self.next_song = next_song
 ```
 
-Now, let’s write a class that will allow us to build our linked music list. Let’s call this class ‘MusicList’:
+Now, let’s write a class that will allow us to build our linked song list. Let’s call this class ‘SongList’:
 
 ```python
-class MusicList:
+class SongList:
     def __init__(self):  
         self.head = None
 ```
 
-We will use the ‘MusicList’ class, which will contain a reference to the ‘MusicNode’ type, to initialize our music list object. Let’s write an instance of our music list class and print the result:
+We will use the ‘SongList’ class, which will contain a reference to the ‘SongNode’ type, to initialize our song list object. Let’s write an instance of our song list class and print the result:
 
 ```python
 if __name__=='__main__':
     #initialize linked list object
-    linked_list = MusicList()
+    linked_list = SongList()
     print(linked_list)
 ```
 
-Now let’s build a linked list of music for our playlist. Let’s select the top 3 music of all time by The Beatles according to Entertainment Weekly. To start let’s define the value of each node. (Note: The ‘…’ corresponds to omitted code):
+Now let’s build a linked list of song for our playlist. Let’s select the top 3 songs of all time by The Beatles according to Entertainment Weekly. To start let’s define the value of each node. (Note: The ‘…’ corresponds to omitted code):
 
 ```python
 if __name__=='__main__':
     ... 
     #assign values to nodes 
-    linked_list.head = MusicNode("A Hard Day's Night")
-    second = MusicNode('A Day in the Life')
-    third = MusicNode("Strawberry Fields Forever")
+    linked_list.head = SongNode("A Hard Day's Night")
+    second = SongNode('A Day in the Life')
+    third = SongNode("Strawberry Fields Forever")
 ```
 
-Now let’s define the ‘next music’ value of the head node (the first music):
+Now let’s define the ‘next song’ value of the head node (the first song):
 
 ```python
 if __name__=='__main__':
     ...
     #link nodes
-    linked_list.head.next_music = second
+    linked_list.head.next_song = second
 ```
 
 
@@ -187,16 +187,16 @@ if __name__=='__main__':
     second.next_song = third
 ```
 
-Next, let’s define a simple function that will allow us to traverse our linked music list. In a while loop we’ll print the value of the current music and redefine the current value as the next music until it reaches the tail of the linked list, which points to null:
+Next, let’s define a simple function that will allow us to traverse our linked song list. In a while loop we’ll print the value of the current song and redefine the current value as the next song until it reaches the tail of the linked list, which points to null:
 
 ```python
-class MusicList:   
+class SongList:   
     ...
-    def printMusic(self): 
+    def printSong(self): 
         value = self.head 
         while (value): 
-            print(value.current_music) 
-            value = value.next_music
+            print(value.current_song) 
+            value = value.next_song
 ```
 
 Next, let’s print our list of songs:
@@ -204,8 +204,29 @@ Next, let’s print our list of songs:
 ```python
 if __name__=='__main__':
     ...
-    linked_list.printMusic()
+    linked_list.printSong()
 ```
 
 ## Problem to Solve
 
+1. Next, let’s define a function that allows us to insert a song at the end of our linked list. The function will take the parameter ‘new_song’. The function first checks if the head of the linked list is ‘None’. If it is, the head takes the value of new song:
+
+```python
+def NewSong(self, new_song):
+        NewSongNode = SongNode(new_song)
+        if self.head is None:
+            self.head = NewSongNode
+```
+
+2. Now, let’s add two new songs “She Loves You” and “Something” and print our list of songs:
+
+```python
+if __name__=='__main__':
+    ...
+    linked_list.newSong("She Loves You")
+    linked_list.newSong("Something")
+    linked_list.printSong()
+
+
+```
+You can find the solution [here](linked-list.py)
